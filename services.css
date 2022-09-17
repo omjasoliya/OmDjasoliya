@@ -1,0 +1,347 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,300,300italic);
+html{
+  font-size:  62.5%;
+  background-color:transparent;
+}
+
+
+.centered, #watch-and-learn .screen, #watch-and-learn   {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+}
+
+.view {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.noScroll {
+  width: 100%;
+  height: 39rem;
+  overflow: hidden;
+  position: relative;
+  transition: margin 500ms;
+}
+
+.scroll {
+  width: 100%;
+  height: 39rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
+  transition: margin 500ms;
+}
+
+.line {
+  width: 4rem;
+  height: .5rem;
+  border-bottom: 1px solid #e8e8e8;
+  margin-left: 2em;
+}
+
+
+
+#watch-and-learn {
+  width: 36.2rem;
+  height: 44rem;
+  border-radius: 1rem;
+  background-color: #141414;
+  z-index: 4;
+}
+#watch-and-learn .screen {
+  width: 31.2rem;
+  height: 39rem;
+  cursor: pointer;
+  background-image: url("godkrishna.jpg");
+  font-family: "Open Sans", sans-serif;
+  overflow: hidden;
+}
+
+.notifications {
+  padding: 0.5em 0;
+  background-color: #1c1c1c;
+}
+.notifications ul {
+  text-align: center;
+}
+.notifications ul li {
+  margin: 0 1em;
+  width: 2rem;
+  height: 2rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  vertical-align: bottom;
+}
+.notifications .mssgNot {
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/242749/msg.png");
+}
+.notifications .emailNot {
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/242749/noteEmail.png");
+  background-position: 0 3px;
+}
+.notifications .planNot {
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/242749/todo.svg");
+}
+
+.lockScreen {
+  background-color: transparent;
+}
+.lockScreen h1 {
+  color: #e8e8e8;
+  font-weight: 300;
+  font-size: 5.75em;
+  padding: 0.6em 0 0 0.25em;
+}
+.lockScreen h2 {
+  color: #e8e8e8;
+  font-weight: 300;
+  font-size: 0.8em;
+  padding: 0.75em 0 0 2.5em;
+}
+.lockScreen .time span {
+  margin-left: -1.5rem;
+}
+.lockScreen .time span:first-child {
+  margin-left: 0;
+}
+.lockScreen .day {
+  font-weight: 400;
+  font-size: 1em;
+  padding: 0.25em 0 0 1.95em;
+}
+.lockScreen .unlockMe {
+  width: 100%;
+  height: 7rem;
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(28, 28, 28, 0.85);
+  
+}
+.lockScreen .unlockToggle {
+  position: absolute;
+  top: 1.7rem;
+  
+}
+.lockScreen .unlockToggle .unlock {
+  margin-top: -.7rem;
+  text-align: center;
+}
+.lockScreen .unlockToggle .unlock:before {
+  content: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/242749/lock.png");
+  margin-right: 6.5rem;
+}
+.lockScreen .unlockToggle .unlocked {
+  margin-top: -.7rem;
+}
+.lockScreen .unlockToggle .unlocked:before {
+  content: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/242749/unlocked.png");
+}
+.lockScreen .unlockToggle ul {
+  text-align: center;
+  width: 31.2rem;
+}
+.lockScreen .unlockToggle ul li {
+  list-style: none;
+  text-align: center;
+  display: inline-block;
+  color: #e8e8e8;
+}
+
+.dashboard {
+   background-color: black;  /* rgba(33, 170, 102, 0.8) */
+   border: 2px solid white;
+}
+.dashboard .dashNav {
+  width: 100%;
+  background-color: #1c1c1c;
+  padding: 0.5em 0;
+}
+.dashboard h3 {
+  color: #e8e8e8;
+  padding: 0 3em;
+  display: inline-block;
+}
+.dashboard h3:nth-child(2) {
+  float: right;
+}
+.dashboard .dashItems {
+  padding-right: 5em;
+}
+.dashboard .dashItems ul li {
+  width: 50%;
+  height: 15rem;
+  float: left;
+  color: white;
+  text-align: center;
+  position: relative;
+}
+.dashboard .dashItems ul li img {
+  margin-left: 4rem;
+  margin-bottom: 1rem;
+  width: 6rem;
+  display: block;
+  position: absolute;
+  bottom: 4rem;
+}
+.dashboard .dashItems ul li p {
+  position: absolute;
+  bottom: 2rem;
+  text-align: center;
+  width: 100%;
+}
+
+.pushUp {
+  margin-top: -39rem;
+}
+
+.toDoNav {
+  width: 100%;
+  background-color: #1c1c1c;
+}
+.toDoNav h1 {
+  color: #e8e8e8;
+  padding-left: 2.5em;
+}
+
+.toDo {
+  background-color: #21aa66;
+  display: none;
+}
+.toDo ul {
+  width: 27rem;
+  margin: 0 auto;
+}
+.toDo ul li {
+  color: #e8e8e8;
+  padding: 1em 0 1em 0;
+  border-bottom: .1rem solid #e8e8e8;
+}
+.toDo ul li:last-child {
+  border-bottom: none;
+  padding-bottom: 1em;
+}
+.toDo ul li p {
+  display: inline;
+}
+.toDo ul li p:nth-child(2) {
+  float: right;
+}
+.toDo ul li .num {
+  padding: 0.2em;
+  color: rgba(194, 45, 45, 0.75);
+  background-color: rgba(232, 232, 232, 0.6);
+  width: 2rem;
+  display: inline-block;
+}
+.toDo ul li input {
+  background-color: rgba(33, 170, 102, 0);
+  border: none;
+  color: #e8e8e8;
+  width: 20rem;
+  display: inline-block;
+  font-size: 1em;
+}
+.toDo ul li ::-webkit-input-placeholder {
+  color: #e8e8e8;
+  
+}
+.toDo ul li ::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #e8e8e8;
+  
+}
+.toDo ul li :-ms-input-placeholder {
+  color: #e8e8e8;
+  
+}
+
+.messenger {
+  background-color: #c22d2d;
+}
+.messenger input {
+  width: 75%;
+  height: 4rem;
+  position: relative;
+  top: 78%;
+  right: 10%;
+}
+.messenger .send {
+  width: 20%;
+  height: 4.6rem;
+  position: absolute;
+  right: .8%;
+  bottom: 0;
+  background-color: #21aa66;
+}
+.messenger .send h2 {
+  color: #e8e8e8;
+  margin-top: 1.5rem;
+  text-align: center;
+}
+.messenger .responses {
+  width: 100%;
+  height: 34.4rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.messenger .me {
+  padding: 1em 1em 0.5em 1em;
+  font-size: 1.15em;
+  display: none;
+}
+.messenger p {
+  display: none;
+  padding: 0.5em 1em 0.5em 0.5em;
+  margin-left: 1em;
+  color: #1c1c1c;
+  font-weight: 300;
+  font-size: 1em;
+  line-height: 180%;
+  background-color: #e8e8e8;
+  max-width: 23rem;
+  border-radius: .7rem;
+}
+
+.email {
+  background-color: #c22d2d;
+}
+.email h2 {
+  background-color: #e8e8e8;
+  color: #1c1c1c;
+  padding: 0.5em 0 0.5em 1em;
+}
+.email span {
+  display: inline-block;
+  margin: 0.2em 0;
+  border-right: 1px solid #e8e8e8;
+  padding: 0 0.5em 0 0;
+}
+.email ul {
+  padding: 0.5em 1em;
+}
+.email li {
+  color: #e8e8e8;
+  font-size: 0.9em;
+  font-weight: 300;
+  line-height: 140%;
+  padding-top: 0.5em;
+  display: none;
+}
+.email .subject {
+  font-weight: 700;
+  border-bottom: 1px solid #e8e8e8;
+  padding-bottom: 0.5em;
+  display: block;
+}
+body{
+    background: transparent;
+    
+}
+ /*-------------------------------------------------- this is background -----------------------------------------------*/

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="new.css">
+    <link rel="stylesheet" href="chat.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" ></script>     
+        
+</head>
+<body>     
+	<nav>             
+        <label  class="logo"> ●‿●            
+            <a id='title'  href="ganpati.html">
+                <span >
+                    ⊚‿⊚  
+                </span>                  
+                <br>                
+                    <div class="button__holder">
+                     <button  class="plus" >                       
+                     </button>
+                    </div>                
+                </a>                      
+        </label>                            
+        <ul>
+            <li><a class="active" href="index.html">Home</a></li>
+            <li><a href="aboutme.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="connect.html">Contact</a></li>            
+        </ul>
+        <label id="icon">
+            <!-- <i class="fas fa-bars"></i> -->
+            <img src="barr.png" alt="bar">
+        </label>
+    </nav>        
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <div id='stars'></div>
+    <div id='stars2'></div>
+    <div id='stars3'></div>
+    
+    <div class="chat_icon">
+        <img src="doremon.png" alt="msg2">
+    </div>
+    <div class="chatbot-box">
+        <div id="chatList">
+            <ul>
+            </ul>
+        </div>
+        <div class="message-box-wrap">
+            <div class="message-box"></div>
+            <button id="send">➲</button>
+        </div>
+        <div class="admin-client-message-wrap">
+            <input type="text" name="nam" data-question="Hello ! I am your Virtual frd doremon."></input>
+            <select name="service" data-question="How Do you know OM ? " >
+                <option>Please select</option>
+                <option>Friend</option>
+                <option>Relative</option>
+                <option>visitor</option>
+            </select>
+            <select name="service" data-question="which language you prefer for chat ? " >
+                <option>Please select</option>
+                <option>Gujrati</option>
+                <option>English</option>
+            </select>
+            
+            <input type="text" name="name" data-question="What is your name">
+            <input type="text" name="email" data-question="What is your email ? 
+            " data-name  required>
+            <input type="text" name="phone" data-question="What is your phone">
+            <input type="text" name="address" data-question="What is your address">
+            <div data-question="confirm  ?">
+                <button id="confirm">Yes</button>
+                <button id="notconfirm">No</button>
+            </div>
+        </div>
+        
+        <form id="submit_info_form">
+            <div class="submit_info"></div>
+            <input type="submit" value="send" id="submit" name="">
+        </form>
+    </div>    
+</body>
+
+<script  src="/jquery.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function(){
+       $('#icon').click(function(){
+          $('ul').toggleClass('show');
+       });
+    });
+</script>
+
+
+<script>
+    questionFirst = $('[data-question]:first').attr('data-question');
+    $('#chatList ul').append('<li  class="admin-message">' + questionFirst + '</li>');
+    $('[data-question]:first').appendTo('.message-box');
+
+    $("#send").click(function (event) {
+
+        questionVal = $('.message-box [data-question]').val();
+        $("#chatList ul").append('<li  class="client-message">' + questionVal + '</li>');
+        dataName = $('.admin-client-message-wrap [data-name] ').attr('data-question');
+
+        if ($('.message-box [name]').attr('name') == "name") {
+            nameVal = $('.message-box [name]').val();
+            $('.admin-client-message-wrap [data-name]').attr('data-question', "Hi " + nameVal + ",</br>" + dataName);
+        }      
+
+        $('.message-box [data-question]').appendTo('.submit_info');
+
+        if ($('.admin-client-message-wrap').children().length != 0) {
+            questionFirst = $('[data-question]:first').attr('data-question');
+            $('#chatList ul').append('<li  class="admin-message">' + questionFirst + '</li>');
+            $('[data-question]:first').appendTo('.message-box');
+            $('#send').css({ "pointer-events": "none" });
+            $('.message-box [data-question]').bind('click change keyup', function (event) {
+                if ($(this).val() == "") {
+                    $('#send').css({ "pointer-events": "none" });
+                } else {
+                    $('#send').css({ "pointer-events": "auto" });
+                }
+            });
+
+        }
+
+        $('#chatList').animate({ scrollTop: 5000 })
+
+    });
+
+    $('.message-box [data-question]').bind('click change keyup', function (event) {
+        if ($(this).val() == "") {
+            $('#send').css({ "pointer-events": "none" });
+        } else {
+            $('#send').css({ "pointer-events": "auto" });
+        }
+    });
+
+    $('#confirm').click(function (event) {
+        $('#submit').trigger('click');
+    });
+
+    $('#notconfirm').click(function (event) {
+        location.reload();
+    });
+
+    $('.chat_icon').click(function (event) {
+        $('.chatbot-box').toggleClass('active');
+    });
+</script>
+</html> 
